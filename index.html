@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>71 Shades | Media Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for reactive config binding -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.292.0/lucide.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Anton', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-black': '#0a0a0a',
+                        'brand-dark': '#121212',
+                        'brand-gray': '#2a2a2a',
+                        'brand-light': '#f4f4f5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f4f4f5;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a4a4a;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.8) 80%, rgba(10,10,10,1) 100%);
+        }
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(244, 244, 245, 0.2);
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-white selection:text-black" x-data="portfolio">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center text-white">
+        <div class="text-xl font-display uppercase tracking-widest" x-text="CREATOR_DISPLAY_NAME"></div>
+        <div class="hidden md:flex gap-8 text-sm font-semibold tracking-widest uppercase">
+            <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
+            <a href="#proof" class="hover:text-gray-400 transition-colors">Impact</a>
+            <a href="#work" class="hover:text-gray-400 transition-colors">Content</a>
+            <a href="#services" class="hover:text-gray-400 transition-colors">Services</a>
+        </div>
+        <a href="#contact" class="border border-white px-6 py-2 text-sm font-semibold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+            Contact
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Replaceable Hero Image -->
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=2070&auto=format&fit=crop" alt="Motorcycle Content Creator" class="w-full h-full object-cover opacity-70 scale-105 transform origin-center transition-transform duration-[10s] hover:scale-100 grayscale-[20%]" />
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+        </div>
+
+        <div class="relative z-20 container mx-auto px-6 pt-32 pb-20 h-full flex flex-col justify-end">
+            <p class="text-sm md:text-base font-semibold tracking-[0.3em] uppercase mb-4 text-gray-400">Motorcycle Content Creator | India</p>
+            <h1 class="font-display text-6xl md:text-8xl lg:text-[9rem] leading-none uppercase tracking-tighter mix-blend-overlay text-white opacity-90" x-text="CREATOR_DISPLAY_NAME">
+            </h1>
+            
+            <div class="mt-8 md:mt-12 flex flex-col md:flex-row gap-6 md:items-end justify-between border-t border-brand-gray pt-8">
+                <div class="max-w-2xl">
+                    <p class="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-gray-300 mb-4">
+                        Motorcycles. Riding. Real-world knowledge.
+                    </p>
+                    <p class="text-lg md:text-xl font-light text-gray-400 leading-relaxed">
+                        I create motorcycle content for Indian riders — covering riding awareness, maintenance, ownership and real-world motorcycle decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-brand-black">
+        <div class="container mx-auto px-6 max-w-3xl text-center reveal-on-scroll">
+            <h2 class="font-display text-3xl md:text-4xl uppercase mb-6 text-gray-500">About</h2>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-200">
+                "I create motorcycle content for Indian riders — covering riding awareness, maintenance, ownership and real-world motorcycle decisions. My goal is simple: make useful information easy to understand and worth watching."
+            </p>
+        </div>
+    </section>
+
+    <!-- Creator Proof / Key Numbers -->
+    <section id="proof" class="py-24 bg-brand-dark border-t border-brand-gray">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center reveal-on-scroll items-end">
+                <div class="border-b md:border-b-0 md:border-r border-brand-gray pb-12 md:pb-0">
+                    <p class="font-display text-6xl md:text-7xl text-gray-300" x-text="INSTAGRAM_FOLLOWERS"></p>
+                    <p class="text-sm tracking-[0.2em] uppercase text-gray-500 mt-4">Instagram Followers</p>
+                </div>
+                <div>
+                    <p class="font-display text-6xl md:text-7xl text-white" x-text="TOTAL_REACH"></p>
+                    <p class="text-sm tracking-[0.2em] uppercase text-white font-semibold mt-4">Views in Last 90 Days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Demographics -->
+    <section class="py-24 bg-brand-black border-t border-brand-gray">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="font-display text-4xl md:text-5xl uppercase leading-none mb-16 reveal-on-scroll">Audience</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                <!-- Gender -->
+                <div class="reveal-on-scroll">
+                    <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-6">Gender</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-white">Male</span>
+                                <span class="font-display text-2xl text-white">90.4%</span>
+                            </div>
+                            <div class="w-full h-1 bg-brand-gray rounded-full overflow-hidden">
+                                <div class="h-full bg-white rounded-full" style="width: 90.4%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-400">Female</span>
+                                <span class="font-display text-lg text-gray-500">9.6%</span>
+                            </div>
+                            <div class="w-full h-1 bg-brand-gray rounded-full overflow-hidden">
+                                <div class="h-full bg-gray-600 rounded-full" style="width: 9.6%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Age -->
+                <div class="reveal-on-scroll" style="transition-delay: 100ms;">
+                    <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-6">Age Range</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-white">18–24</span>
+                                <span class="text-sm font-semibold text-white">41.9%</span>
+                            </div>
+                            <div class="w-full h-1 bg-brand-gray rounded-full overflow-hidden">
+                                <div class="h-full bg-white rounded-full" style="width: 41.9%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-white">25–34</span>
+                                <span class="text-sm font-semibold text-white">41.1%</span>
+                            </div>
+                            <div class="w-full h-1 bg-brand-gray rounded-full overflow-hidden">
+                                <div class="h-full bg-white rounded-full" style="width: 41.1%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-gray-400">35–44</span>
+                                <span class="text-sm font-semibold text-gray-500">10.8%</span>
+                            </div>
+                            <div class="w-full h-1 bg-brand-gray rounded-full overflow-hidden">
+                                <div class="h-full bg-gray-600 rounded-full" style="width: 10.8%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-gray-500">45+</span>
+                                <span class="text-sm font-semibold text-gray-600">4.3%</span>
+                            </div>
+                            <div class="w-full h-1 bg-brand-gray rounded-full overflow-hidden">
+                                <div class="h-full bg-gray-700 rounded-full" style="width: 4.3%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Cities -->
+                <div class="reveal-on-scroll" style="transition-delay: 200ms;">
+                    <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-6">Top Cities</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-sm font-medium text-white">Delhi</span>
+                            <span class="text-sm font-semibold text-gray-400">4.8%</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-sm font-medium text-white">Mumbai</span>
+                            <span class="text-sm font-semibold text-gray-400">3.5%</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-sm font-medium text-white">Bangalore</span>
+                            <span class="text-sm font-semibold text-gray-400">2.7%</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-sm font-medium text-gray-400">Pune</span>
+                            <span class="text-sm font-semibold text-gray-500">1.9%</span>
+                        </div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="text-sm font-medium text-gray-400">Kolkata</span>
+                            <span class="text-sm font-semibold text-gray-500">1.6%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Takeaway -->
+            <div class="mt-16 pt-8 border-t border-brand-gray reveal-on-scroll">
+                <p class="text-center text-gray-400 font-light text-lg">
+                    <span class="text-white font-semibold">83% of my audience is aged 18–34</span> — the core motorcycle buying and riding demographic across India's top metro cities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Reel -->
+    <section class="py-32 bg-brand-black relative border-t border-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+                <div class="lg:w-1/2 reveal-on-scroll">
+                    <h2 class="font-display text-6xl md:text-8xl uppercase leading-none mb-4" x-text="FEATURED_REEL.VIEWS"></h2>
+                    <h3 class="font-display text-2xl md:text-3xl uppercase text-white mb-8 tracking-wide">Organic Views</h3>
+                    <p class="text-xl font-light text-gray-300 max-w-md">
+                        High-performance motorcycle content that resonates with the riding community.
+                    </p>
+                </div>
+                <div class="lg:w-1/2 flex justify-center lg:justify-end reveal-on-scroll">
+                    <!-- Clean Reel Card -->
+                    <a x-bind:href="FEATURED_REEL.URL" target="_blank" class="relative block w-full max-w-sm aspect-[9/16] bg-brand-dark rounded-md overflow-hidden group border border-brand-gray hover:border-gray-500 transition-colors">
+                        <img x-bind:src="FEATURED_REEL.THUMBNAIL" alt="Featured Reel" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90"></div>
+                        
+                        <!-- Play Icon Center -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                            <div class="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center backdrop-blur-sm bg-black/40">
+                                <i data-lucide="play" class="w-8 h-8 text-white ml-1"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Clean Info Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <p class="font-display text-3xl text-white mb-2" x-text="FEATURED_REEL.VIEWS"></p>
+                            <p class="text-sm font-medium text-gray-200 line-clamp-2" x-text="FEATURED_REEL.TITLE"></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Pillars -->
+    <section class="py-24 bg-brand-dark border-t border-brand-gray">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl md:text-5xl uppercase leading-none mb-12 reveal-on-scroll">Content Pillars</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="reveal-on-scroll">
+                    <p class="font-display text-3xl text-gray-600 mb-4">01</p>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-4 text-white">Riding Awareness</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">Practical content around braking, road awareness, speed, rider judgement and safer riding.</p>
+                </div>
+                <div class="reveal-on-scroll" style="transition-delay: 100ms;">
+                    <p class="font-display text-3xl text-gray-600 mb-4">02</p>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-4 text-white">Maintenance</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">Simple explanations about tyres, engine oil, chains, servicing and motorcycle care.</p>
+                </div>
+                <div class="reveal-on-scroll" style="transition-delay: 200ms;">
+                    <p class="font-display text-3xl text-gray-600 mb-4">03</p>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-4 text-white">Ownership</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">Real-world motorcycle decisions, buying advice, running costs and common ownership mistakes.</p>
+                </div>
+                <div class="reveal-on-scroll" style="transition-delay: 300ms;">
+                    <p class="font-display text-3xl text-gray-600 mb-4">04</p>
+                    <h3 class="text-xl font-bold uppercase tracking-wide mb-4 text-white">Motorcycles</h3>
+                    <p class="text-gray-400 font-light leading-relaxed text-sm">Reviews, comparisons and practical perspectives on motorcycles available to Indian riders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Content -->
+    <section id="work" class="py-32 bg-brand-black border-t border-brand-gray">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl md:text-5xl uppercase leading-none mb-12 reveal-on-scroll">Selected Content</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <template x-for="(content, index) in SELECTED_CONTENT" :key="index">
+                    <a x-bind:href="content.URL" target="_blank" class="group relative aspect-[4/5] overflow-hidden bg-brand-dark block reveal-on-scroll">
+                        <img x-bind:src="content.THUMBNAIL" alt="Content Thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <!-- Play Indicator -->
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm p-2 rounded-full border border-white/20">
+                            <i data-lucide="play" class="w-4 h-4 text-white ml-0.5"></i>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <p class="text-xs font-semibold tracking-widest uppercase text-gray-300 mb-2" x-text="content.TAG"></p>
+                            <h3 class="font-medium text-white text-lg leading-tight line-clamp-2" x-text="content.TITLE"></h3>
+                        </div>
+                    </a>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Can Create For Brands -->
+    <section id="services" class="py-32 bg-brand-dark border-t border-brand-gray">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="font-display text-4xl md:text-5xl uppercase leading-none mb-12 reveal-on-scroll">What I Can Create</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+                <div class="reveal-on-scroll border-t border-brand-gray pt-6">
+                    <h3 class="text-lg font-bold uppercase tracking-wide mb-3">Product Integration</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">Naturally feature a relevant product inside useful motorcycle content.</p>
+                </div>
+                <div class="reveal-on-scroll border-t border-brand-gray pt-6">
+                    <h3 class="text-lg font-bold uppercase tracking-wide mb-3">Dedicated Reels</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">Build a complete Reel around a product, feature or campaign objective.</p>
+                </div>
+                <div class="reveal-on-scroll border-t border-brand-gray pt-6">
+                    <h3 class="text-lg font-bold uppercase tracking-wide mb-3">Educational Product Content</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">Turn technical product features into simple information riders actually understand.</p>
+                </div>
+                <div class="reveal-on-scroll border-t border-brand-gray pt-6">
+                    <h3 class="text-lg font-bold uppercase tracking-wide mb-3">Product Demonstration</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">Show how a product works in a real motorcycle ownership or riding context.</p>
+                </div>
+                <div class="reveal-on-scroll border-t border-brand-gray pt-6">
+                    <h3 class="text-lg font-bold uppercase tracking-wide mb-3">UGC</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">Create motorcycle-focused vertical content for a brand's own social channels.</p>
+                </div>
+                <div class="reveal-on-scroll border-t border-brand-gray pt-6">
+                    <h3 class="text-lg font-bold uppercase tracking-wide mb-3">Instagram Stories</h3>
+                    <p class="text-gray-400 font-light text-sm leading-relaxed">Supporting content through Instagram Stories — polls, behind-the-scenes, and quick product highlights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Brands Should Work With Me & Brand Categories -->
+    <section class="py-32 bg-brand-black border-t border-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <!-- Why Work With Me -->
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl uppercase leading-none mb-12 reveal-on-scroll">Why Work With Me</h2>
+                    <div class="space-y-8">
+                        <div class="reveal-on-scroll">
+                            <h3 class="text-lg font-bold uppercase tracking-wide mb-2 text-white">Motorcycle-Focused</h3>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">Content built specifically for Indian motorcycle riders.</p>
+                        </div>
+                        <div class="reveal-on-scroll">
+                            <h3 class="text-lg font-bold uppercase tracking-wide mb-2 text-white">Educational Storytelling</h3>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">Technical topics turned into simple, engaging content.</p>
+                        </div>
+                        <div class="reveal-on-scroll">
+                            <h3 class="text-lg font-bold uppercase tracking-wide mb-2 text-white">Real-World Perspective</h3>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">Products are shown in actual riding and ownership contexts.</p>
+                        </div>
+                        <div class="reveal-on-scroll">
+                            <h3 class="text-lg font-bold uppercase tracking-wide mb-2 text-white">Natural Integration</h3>
+                            <p class="text-gray-400 font-light text-sm leading-relaxed">The product fits into the story instead of becoming the entire story.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Categories -->
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl uppercase leading-none mb-12 reveal-on-scroll text-gray-500">Relevant Brand Categories</h2>
+                    <div class="flex flex-wrap gap-4 reveal-on-scroll">
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300">Helmets & Riding Gear</span>
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300">Tyres</span>
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300">Lubricants & Maintenance</span>
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300">Motorcycle Accessories</span>
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300">Touring & Luggage</span>
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300">Action Cameras & Creator Gear</span>
+                        <span class="px-5 py-3 border border-brand-gray text-sm font-semibold uppercase tracking-widest text-gray-300 text-white border-gray-500">Motorcycle Brands</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-32 bg-white text-black text-center">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="font-display text-6xl md:text-8xl uppercase leading-none mb-8 reveal-on-scroll">
+                Let's Work<br>Together
+            </h2>
+            <p class="text-lg md:text-xl font-medium text-gray-600 mb-12 reveal-on-scroll">
+                Have a motorcycle, riding, maintenance or automotive campaign in mind? Let's create content riders actually want to watch.
+            </p>
+            
+            <a x-bind:href="'mailto:' + EMAIL" class="inline-flex items-center gap-4 bg-black text-white px-10 py-5 text-lg font-semibold uppercase tracking-widest hover:bg-brand-gray transition-colors group reveal-on-scroll">
+                Get In Touch
+                <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
+            </a>
+            
+            <div class="mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-200 pt-12 text-center reveal-on-scroll max-w-2xl mx-auto">
+                <div>
+                    <h4 class="font-semibold uppercase tracking-widest text-xs text-gray-400 mb-3">Instagram</h4>
+                    <a x-bind:href="INSTAGRAM_URL" target="_blank" class="font-medium text-lg hover:text-gray-500 transition-colors" x-text="INSTAGRAM_HANDLE"></a>
+                </div>
+                <div>
+                    <h4 class="font-semibold uppercase tracking-widest text-xs text-gray-400 mb-3">Email</h4>
+                    <a x-bind:href="'mailto:' + EMAIL" class="font-medium text-lg hover:text-gray-500 transition-colors" x-text="EMAIL"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIG / CONTENT SCRIPT -->
+    <script>
+        // =====================================================================
+        // CONFIG / CONTENT
+        // Edit these variables to update the media kit content.
+        // =====================================================================
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('portfolio', () => ({
+                // IDENTITY
+                CREATOR_DISPLAY_NAME: "71 Shades",
+                INSTAGRAM_HANDLE: "@71_shades",
+                INSTAGRAM_URL: "https://www.instagram.com/71_shades/",
+                EMAIL: "71shades.business@gmail.com",
+                
+                // STATS
+                INSTAGRAM_FOLLOWERS: "19.5K+",
+                TOTAL_REACH: "2.6Cr+",
+                
+                // FEATURED REEL
+                FEATURED_REEL: {
+                    THUMBNAIL: "featured-reel.jpg",
+                    URL: "https://www.instagram.com/reel/DbdS0KBhYQV/",
+                    TITLE: "Har Safe Dikhne Wala Overtake Safe Nahi Hota. ⚠️",
+                    VIEWS: "1.2M+"
+                },
+                
+                // SELECTED CONTENT (3 items)
+                SELECTED_CONTENT: [
+                    {
+                        THUMBNAIL: "new-riders-thumb.jpg",
+                        URL: "https://www.instagram.com/reel/DblBH6Zh7Ix/",
+                        TAG: "Riding Safety",
+                        TITLE: "Naye Riders Panic Braking Sabse Zyada Kyu Karte Hain?"
+                    },
+                    {
+                        THUMBNAIL: "learn-to-ride-thumb.jpg",
+                        URL: "https://www.instagram.com/reel/DcYRvGnBQHK/",
+                        TAG: "Beginner Guide",
+                        TITLE: "Bike Chalana Nahi Aata? Beginner Guide to Riding a Bike!"
+                    },
+                    {
+                        THUMBNAIL: "speed-wobble-thumb.jpg",
+                        URL: "https://www.instagram.com/reel/Ddf_gHWhUFf/",
+                        TAG: "Motorcycle Knowledge",
+                        TITLE: "Na Brake Fail Hui. Na Tyre Puncture. Phir Bike Kaise Giri?"
+                    }
+                ]
+            }))
+        });
+
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Run observer slightly after Alpine initializes
+        setTimeout(() => {
+            document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        }, 100);
+    </script>
+</body>
+</html>
